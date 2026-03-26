@@ -60,6 +60,8 @@ Tested for path traversal vulnerability:
 http://MACHINE_IP:5000/api/fetch_layout?layout=../../../../etc/passwd
 ```
 
+![output showing user details](user_details.png)
+
 This successfully returned system user data, confirming a **Path Traversal vulnerability**.
 
 ---
@@ -83,6 +85,8 @@ Then accessed:
 ```bash
 http://MACHINE_IP:5000/api/fetch_layout?layout=../../../../proc/self/cwd/app.py
 ```
+
+![output showing admin api key](api_key.png)
 
 This worked and revealed:
 - `admin_API_key`
@@ -125,6 +129,8 @@ SELECT * FROM users;
 
 ## Flag
 
+![Flag displayed in cupid's description](flag.png)
+
 The flag was found in the description field of the **cupid** user.
 
 ---
@@ -133,5 +139,5 @@ The flag was found in the description field of the **cupid** user.
 
 - Path Traversal can expose sensitive system files  
 - `/proc/self/cwd` can be used to access application files  
-- API endpoints in JavaScript can reveal hidden functionality  
-- Proper input validation is critical to prevent such vulnerabilities  
+- Hidden API endpoints in JavaScript can be attack surfaces
+- Proper input validation is important to prevent such vulnerabilities
